@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block body %}
+<h1>Our products</h1>
+    {% if products %}
+    {% for el in products %}
+        <div class="alert alert-warning mt-2">
+            <h3>Name of goods: {{ el.name }}</h3><br>
+            <p>Price per piece: {{ el.price }}</p>
+            <p>Quantity: {{ el.quantity }}</p>
+            <a href="/product_detail/{{ el.id }}" class="btn btn-primery">More info</a>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p>No goods</p>
+    {% endif %}
+{% endblock %}

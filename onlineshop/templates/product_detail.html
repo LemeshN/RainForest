@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+Details
+{% endblock %}
+
+{% block body %}
+<h3>Product:</h3>
+    {% for el in products %}
+        <div class="alert alert-warning mt-2">
+            <h3>Name of goods: {{ el.name }}</h3><br>
+            <p>Price per piece: {{ el.price }}</p>
+            <p>Quantity: {{ el.quantity }}</p>
+            <a href="/product_detail/{{ el.id }}/delete" class="btn btn-warning">Delete</a>
+            <a href="/product_detail/{{ el.id }}/update" class="btn btn-warning">Update</a>
+        </div>
+    {% endfor %}
+{% endblock %}

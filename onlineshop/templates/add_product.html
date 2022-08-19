@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+Add new product
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<h1>Add new product</h1>
+    <form method="post">
+        {% csrf_token %}
+            {{ form.name }}<br>
+            {{ form.cost }}<br>
+            {{ form.price }}<br>
+            {{ form.quantity }}<br>
+            <button type="submit" class="btn btn-success">Add</button>
+            <span>{{ error }}</span>
+    </form>
+</div>
+{% endblock %}
